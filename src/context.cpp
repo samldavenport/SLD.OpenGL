@@ -122,6 +122,7 @@ namespace sld {
     gl_context_clear(
         gl_context* ctx) {
         
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
     SLD_OPENGL_API void
@@ -136,6 +137,13 @@ namespace sld {
         ctx->clear_color.g = (GL_NORMAL_FACTOR * color.g);
         ctx->clear_color.b = (GL_NORMAL_FACTOR * color.b);
         ctx->clear_color.a = (GL_NORMAL_FACTOR * color.a);
+
+        glClearColor(
+            ctx->clear_color.r,
+            ctx->clear_color.g,
+            ctx->clear_color.b,
+            ctx->clear_color.a
+        );
     }
 
     SLD_OPENGL_API void
@@ -150,6 +158,13 @@ namespace sld {
         ctx->clear_color.g = (color.g);
         ctx->clear_color.b = (color.b);
         ctx->clear_color.a = (color.a);
+
+        glClearColor(
+            ctx->clear_color.r,
+            ctx->clear_color.g,
+            ctx->clear_color.b,
+            ctx->clear_color.a
+        );
     }
 
     SLD_OPENGL_API void
