@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Debug",
+			"command": "build-debug.bat",
+			"options": {
+				"cwd": "${workspaceFolder}\\scripts"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+			}
+		},
+	]
+}
