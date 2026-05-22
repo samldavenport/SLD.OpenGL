@@ -3,6 +3,10 @@
 		{
 			"name": "SLD.OpenGL",
 			"path": "../.."
+		},
+		{
+			"name": "SLD.Core",
+			"path": "../../SLD.Core"
 		}
 	],
 	"settings": {}
