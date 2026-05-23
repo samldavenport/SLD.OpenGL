@@ -36,7 +36,7 @@ namespace sld {
         return(ctx->error == GL_ERROR_SUCCESS);
     }
 
-    SLD_OPENGL_API void
+    SLD_OPENGL_API bool
     gl_vertex_object_add_attribute_s8(
         gl_context*      ctx,
         const gl_vertex  vertex,
@@ -59,12 +59,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            vertex_index,        // index
-            attrib_count,        // size
-            GL_BYTE,             // type
-            GL_FALSE,            // normalized
-            vertex_size,         // stride
-            (void*)attrib_offset // pointer
+            attrib_index,                     // index
+            attrib_count,                     // size
+            GL_BYTE,                          // type
+            GL_FALSE,                         // normalized
+            vertex_size,                      // stride
+            (void*)((byte*)0 + attrib_offset) // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -77,7 +77,7 @@ namespace sld {
         return(ctx->error == GL_ERROR_SUCCESS);
     }
 
-    SLD_OPENGL_API void
+    SLD_OPENGL_API bool
     gl_vertex_object_add_attribute_u8(
         gl_context*      ctx,
         const gl_vertex  vertex,
@@ -100,12 +100,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            vertex_index,        // index
-            attrib_count,        // size
-            GL_UNSIGNED_BYTE,    // type
-            GL_FALSE,            // normalized
-            vertex_size,         // stride
-            (void*)attrib_offset // pointer
+            attrib_index,                     // index
+            attrib_count,                     // size
+            GL_UNSIGNED_BYTE,                 // type
+            GL_FALSE,                         // normalized
+            vertex_size,                      // stride
+            (void*)((byte*)0 + attrib_offset) // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -118,7 +118,7 @@ namespace sld {
         return(ctx->error == GL_ERROR_SUCCESS);
     }
     
-    SLD_OPENGL_API void
+    SLD_OPENGL_API bool
     gl_vertex_object_add_attribute_s16(
         gl_context*      ctx,
         const gl_vertex  vertex,
@@ -140,12 +140,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            vertex_index,        // index
-            attrib_count,        // size
-            GL_SHORT,            // type
-            GL_FALSE,            // normalized
-            vertex_size,         // stride
-            (void*)attrib_offset // pointer
+            attrib_index,                     // index
+            attrib_count,                     // size
+            GL_SHORT,                         // type
+            GL_FALSE,                         // normalized
+            vertex_size,                      // stride
+            (void*)((byte*)0 + attrib_offset) // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -158,7 +158,7 @@ namespace sld {
         return(ctx->error == GL_ERROR_SUCCESS);
     }
     
-    SLD_OPENGL_API void
+    SLD_OPENGL_API bool
     gl_vertex_object_add_attribute_u16(
         gl_context*      ctx,
         const gl_vertex  vertex,
@@ -180,12 +180,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            vertex_index,        // index
-            attrib_count,        // size
-            GL_UNSIGNED_SHORT,   // type
-            GL_FALSE,            // normalized
-            vertex_size,         // stride
-            (void*)attrib_offset // pointer
+            attrib_index,                     // index
+            attrib_count,                     // size
+            GL_UNSIGNED_SHORT,                // type
+            GL_FALSE,                         // normalized
+            vertex_size,                      // stride
+            (void*)((byte*)0 + attrib_offset) // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -198,7 +198,7 @@ namespace sld {
         return(ctx->error == GL_ERROR_SUCCESS);
     }
 
-    SLD_OPENGL_API void
+    SLD_OPENGL_API bool
     gl_vertex_object_add_attribute_s32(
         gl_context*      ctx,
         const gl_vertex  vertex,
@@ -221,12 +221,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            vertex_index,        // index
-            attrib_count,        // size
-            GL_INT,              // type
-            GL_FALSE,            // normalized
-            vertex_size,         // stride
-            (void*)attrib_offset // pointer
+            attrib_index,                     // index
+            attrib_count,                     // size
+            GL_INT,                           // type
+            GL_FALSE,                         // normalized
+            vertex_size,                      // stride
+            (void*)((byte*)0 + attrib_offset) // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -239,7 +239,7 @@ namespace sld {
         return(ctx->error == GL_ERROR_SUCCESS);
     }
 
-    SLD_OPENGL_API void
+    SLD_OPENGL_API bool
     gl_vertex_object_add_attribute_u32(
         gl_context*      ctx,
         const gl_vertex  vertex,
@@ -261,12 +261,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            vertex_index,        // index
-            attrib_count,        // size
-            GL_UNSIGNED_INT,    // type
-            GL_FALSE,            // normalized
-            vertex_size,         // stride
-            (void*)attrib_offset // pointer
+            attrib_index,                     // index
+            attrib_count,                     // size
+            GL_UNSIGNED_INT,                  // type
+            GL_FALSE,                         // normalized
+            vertex_size,                      // stride
+            (void*)((byte*)0 + attrib_offset) // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -279,7 +279,7 @@ namespace sld {
         return(ctx->error == GL_ERROR_SUCCESS);
     }
 
-    SLD_OPENGL_API void
+    SLD_OPENGL_API bool
     gl_vertex_object_add_attribute_f32(
         gl_context*      ctx,
         const gl_vertex  vertex,
@@ -301,12 +301,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            vertex_index,        // index
-            attrib_count,        // size
-            GL_FLOAT,            // type
-            GL_FALSE,            // normalized
-            vertex_size,         // stride
-            (void*)attrib_offset // pointer
+            attrib_index,                     // index
+            attrib_count,                     // size
+            GL_FLOAT,                         // type
+            GL_FALSE,                         // normalized
+            vertex_size,                      // stride
+            (void*)((byte*)0 + attrib_offset) // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {

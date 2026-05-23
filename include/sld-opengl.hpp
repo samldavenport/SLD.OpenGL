@@ -103,14 +103,14 @@ namespace sld {
     //--------------------------------------------------------------------
 
     SLD_OPENGL_API gl_vertex  gl_vertex_object_create            (gl_context* ctx);
-    SLD_OPENGL_API void       gl_vertex_object_destroy           (gl_context* ctx, const gl_vertex);
-    SLD_OPENGL_API void       gl_vertex_object_add_attribute_s8  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API void       gl_vertex_object_add_attribute_u8  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API void       gl_vertex_object_add_attribute_s16 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API void       gl_vertex_object_add_attribute_u16 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API void       gl_vertex_object_add_attribute_s32 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API void       gl_vertex_object_add_attribute_u32 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API void       gl_vertex_object_add_attribute_f32 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
+    SLD_OPENGL_API bool       gl_vertex_object_destroy           (gl_context* ctx, const gl_vertex);
+    SLD_OPENGL_API bool       gl_vertex_object_add_attribute_s8  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
+    SLD_OPENGL_API bool       gl_vertex_object_add_attribute_u8  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
+    SLD_OPENGL_API bool       gl_vertex_object_add_attribute_s16 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
+    SLD_OPENGL_API bool       gl_vertex_object_add_attribute_u16 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
+    SLD_OPENGL_API bool       gl_vertex_object_add_attribute_s32 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
+    SLD_OPENGL_API bool       gl_vertex_object_add_attribute_u32 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
+    SLD_OPENGL_API bool       gl_vertex_object_add_attribute_f32 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
 };
 
 #endif //SLD_OPENGL_HPP
