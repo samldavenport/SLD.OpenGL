@@ -1,13 +1,9 @@
 #ifndef SLD_OPENGL_HPP
 #define SLD_OPENGL_HPP
 
-#include <Windows.h>
+#include <windows.h>
 #include <GL/glew.h>
-#include <GL/gl.h>
-#include <GL/glext.h>
 #include <GL/wglew.h>
-#include <GL/wgl.h>
-#include <GL/wglext.h>
 #include <assert.h>
 #include <sld.hpp>
 
