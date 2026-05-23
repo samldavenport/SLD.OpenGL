@@ -3,3 +3,4 @@
 #define SLD_DLL_EXPORT
 
 #include "context.cpp"
+#include "shader.cpp"

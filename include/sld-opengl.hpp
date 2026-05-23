@@ -77,23 +77,24 @@ namespace sld {
     SLD_OPENGL_API void        gl_context_set_clear_color_rgba           (gl_context* ctx, color_rgba_u32& color);
     SLD_OPENGL_API void        gl_context_set_clear_color_hex            (gl_context* ctx, color_rgba_f32& color);
     SLD_OPENGL_API void        gl_context_update_viewport                (gl_context* ctx, const u32 pos_x, const u32 pos_y, const u32 width, const u32 height);
+    SLD_OPENGL_API void        gl_context_set_shader_program             (gl_context* ctx, const gl_program program);
 
     //--------------------------------------------------------------------
     // SHADERS
     //--------------------------------------------------------------------
 
-    SLD_OPENGL_API gl_shader   gl_shader_stage_create_vertex             (void);
-    SLD_OPENGL_API gl_shader   gl_shader_stage_create_fragment           (void);
-    SLD_OPENGL_API gl_shader   gl_shader_stage_create_geometry           (void);
-    SLD_OPENGL_API gl_shader   gl_shader_stage_create_compute            (void);
-    SLD_OPENGL_API gl_shader   gl_shader_stage_create_tess_ctrl          (void);
-    SLD_OPENGL_API gl_shader   gl_shader_stage_create_tess_eval          (void);
-    SLD_OPENGL_API gl_shader   gl_shader_stage_destroy                   (const gl_shader shader);
-    SLD_OPENGL_API void        gl_shader_stage_compile_from_source       (const gl_shader shader, const byte* src_ptr, const u32 src_size);
-    SLD_OPENGL_API gl_program  gl_shader_program_create                  (void);
-    SLD_OPENGL_API void        gl_shader_program_destroy                 (const gl_program program);
-    SLD_OPENGL_API void        gl_shader_program_attach_stages           (const gl_program program, const gl_shader* shader_ptr, const u32 shader_count);
-    SLD_OPENGL_API void        gl_shader_program_link                    (const gl_program program);
+    SLD_OPENGL_API gl_shader   gl_shader_stage_create_vertex             (gl_context* ctx);
+    SLD_OPENGL_API gl_shader   gl_shader_stage_create_fragment           (gl_context* ctx);
+    SLD_OPENGL_API gl_shader   gl_shader_stage_create_geometry           (gl_context* ctx);
+    SLD_OPENGL_API gl_shader   gl_shader_stage_create_compute            (gl_context* ctx);
+    SLD_OPENGL_API gl_shader   gl_shader_stage_create_tess_ctrl          (gl_context* ctx);
+    SLD_OPENGL_API gl_shader   gl_shader_stage_create_tess_eval          (gl_context* ctx);
+    SLD_OPENGL_API void        gl_shader_stage_destroy                   (gl_context* ctx, const gl_shader shader);
+    SLD_OPENGL_API bool        gl_shader_stage_compile_from_source       (gl_context* ctx, const gl_shader shader, const byte* src_ptr, const u32 src_size);
+    SLD_OPENGL_API gl_program  gl_shader_program_create                  (gl_context* ctx);
+    SLD_OPENGL_API void        gl_shader_program_destroy                 (gl_context* ctx, const gl_program program);
+    SLD_OPENGL_API bool        gl_shader_program_attach_stages           (gl_context* ctx, const gl_program program, const gl_shader* shader_ptr, const u32 shader_count);
+    SLD_OPENGL_API bool        gl_shader_program_link                    (gl_context* ctx, const gl_program program);
 };
 
 #endif //SLD_OPENGL_HPP

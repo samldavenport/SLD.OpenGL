@@ -89,7 +89,7 @@ namespace sld {
         assert(ctx != NULL && ctx->platform_handle != NULL);
         gl_context_clear_errors(ctx);
 	
-	glEnable(GL_DEPTH_TEST);
+	    glEnable(GL_DEPTH_TEST);
         ctx->error = glGetError();
         assert(ctx->error == GL_ERROR_SUCCESS);
 
