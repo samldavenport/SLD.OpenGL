@@ -5,7 +5,7 @@
 namespace sld {
 
     SLD_OPENGL_API gl_vertex
-    gl_vertex_object_create(
+    gl_vertex_create(
         gl_context* ctx) {
         
         assert(ctx);       
@@ -22,7 +22,7 @@ namespace sld {
     }
 
     SLD_OPENGL_API bool
-    gl_vertex_object_destroy(
+    gl_vertex_destroy(
         gl_context*     ctx,
         const gl_vertex vertex) {
         
@@ -37,7 +37,7 @@ namespace sld {
     }
 
     SLD_OPENGL_API bool
-    gl_vertex_object_add_attribute_s8(
+    gl_vertex_add_attribute_s8(
         gl_context*      ctx,
         const gl_vertex  vertex,
         const u32        vertex_size,
@@ -78,7 +78,7 @@ namespace sld {
     }
 
     SLD_OPENGL_API bool
-    gl_vertex_object_add_attribute_u8(
+    gl_vertex_add_attribute_u8(
         gl_context*      ctx,
         const gl_vertex  vertex,
         const u32        vertex_size,
@@ -119,7 +119,7 @@ namespace sld {
     }
     
     SLD_OPENGL_API bool
-    gl_vertex_object_add_attribute_s16(
+    gl_vertex_add_attribute_s16(
         gl_context*      ctx,
         const gl_vertex  vertex,
         const u32        vertex_size,
@@ -159,7 +159,7 @@ namespace sld {
     }
     
     SLD_OPENGL_API bool
-    gl_vertex_object_add_attribute_u16(
+    gl_vertex_add_attribute_u16(
         gl_context*      ctx,
         const gl_vertex  vertex,
         const u32        vertex_size,
@@ -199,7 +199,7 @@ namespace sld {
     }
 
     SLD_OPENGL_API bool
-    gl_vertex_object_add_attribute_s32(
+    gl_vertex_add_attribute_s32(
         gl_context*      ctx,
         const gl_vertex  vertex,
         const u32        vertex_size,
@@ -240,7 +240,7 @@ namespace sld {
     }
 
     SLD_OPENGL_API bool
-    gl_vertex_object_add_attribute_u32(
+    gl_vertex_add_attribute_u32(
         gl_context*      ctx,
         const gl_vertex  vertex,
         const u32        vertex_size,
@@ -280,7 +280,7 @@ namespace sld {
     }
 
     SLD_OPENGL_API bool
-    gl_vertex_object_add_attribute_f32(
+    gl_vertex_add_attribute_f32(
         gl_context*      ctx,
         const gl_vertex  vertex,
         const u32        vertex_size,
