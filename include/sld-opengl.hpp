@@ -106,13 +106,34 @@ namespace sld {
 
     SLD_OPENGL_API gl_vertex  gl_vertex_create            (gl_context* ctx);
     SLD_OPENGL_API bool       gl_vertex_destroy           (gl_context* ctx, const gl_vertex);
-    SLD_OPENGL_API bool       gl_vertex_add_attribute_s8  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API bool       gl_vertex_add_attribute_u8  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API bool       gl_vertex_add_attribute_s16 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API bool       gl_vertex_add_attribute_u16 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API bool       gl_vertex_add_attribute_s32 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API bool       gl_vertex_add_attribute_u32 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
-    SLD_OPENGL_API bool       gl_vertex_add_attribute_f32 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset, const u32 attrib_count);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s8x1  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s8x2  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s8x3  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s8x4  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u8x1  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u8x2  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u8x3  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u8x4  (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s16x1 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s16x2 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s16x3 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s16x4 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u16x1 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u16x2 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u16x3 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u16x4 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s32x1 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s32x2 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s32x3 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_s32x4 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u32x1 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u32x2 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u32x3 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_u32x4 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_f32x1 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_f32x2 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_f32x3 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
+    SLD_OPENGL_API bool       gl_vertex_add_attribute_f32x4 (gl_context* ctx, const gl_vertex, const u32 vertex_size, const u32 attrib_index, const u32 attrib_offset);
 
     //--------------------------------------------------------------------
     // BUFFERS
