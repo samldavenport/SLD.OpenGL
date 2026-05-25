@@ -119,7 +119,7 @@ namespace sld {
     }
 
     SLD_OPENGL_API void
-    gl_context_clear(
+    gl_context_clear_viewport(
         gl_context* ctx) {
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

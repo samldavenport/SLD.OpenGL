@@ -35,7 +35,6 @@ namespace sld {
     using gl_buffer           = gl_object;
     using gl_buffer_type      = gl_type;
     using gl_buffer_useage    = gl_type;
-    using gl_uniform          = gl_id;
     using gl_platform_handle  = HGLRC;
 
     //--------------------------------------------------------------------
