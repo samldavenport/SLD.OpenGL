@@ -96,7 +96,7 @@ namespace sld {
     SLD_OPENGL_API bool        gl_shader_stage_compile_from_source       (gl_context* ctx, const gl_shader shader, const byte* src_ptr, const u32 src_size);
     SLD_OPENGL_API gl_program  gl_shader_program_create                  (gl_context* ctx);
     SLD_OPENGL_API void        gl_shader_program_destroy                 (gl_context* ctx, const gl_program program);
-    SLD_OPENGL_API bool        gl_shader_program_attach_stages           (gl_context* ctx, const gl_program program, const gl_shader* shader_ptr, const u32 shader_count);
+    SLD_OPENGL_API bool        gl_shader_program_attach_stage            (gl_context* ctx, const gl_program program, const gl_shader shader);
     SLD_OPENGL_API bool        gl_shader_program_link                    (gl_context* ctx, const gl_program program);
 
     //--------------------------------------------------------------------
