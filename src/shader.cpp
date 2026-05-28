@@ -108,21 +108,22 @@ namespace sld {
 
     SLD_OPENGL_API bool
     gl_shader_stage_compile_from_source(
-        gl_context* ctx,
+        gl_context*     ctx,
         const gl_shader shader,
-        const byte* src_ptr,
-        const u32 src_size) {
+        const byte*     src_ptr,
+        const u32       src_size) {
 
         gl_context_clear_errors(ctx);
 
-        const GLchar** gl_src_src_ptr = (const GLchar**)&src_ptr;
-        const GLint*   gl_src_size    = (GLint*)&src_size;
-        glShaderSource(shader, 1, gl_src_src_ptr, gl_src_size);
-    
-        s32 success;
-        glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+        const GLchar** gl_src_ptr  = (const GLchar**)&src_ptr;
+        const GLint*   gl_src_size = (GLint*)&src_size;
+        glShaderSource  (shader, 1, gl_src_ptr, gl_src_size);
+        glCompileShader (shader);
 
-        const bool did_compile = (success == GL_ERROR_SUCCESS); 
+        s32 compile_status;
+        glGetShaderiv(shader, GL_COMPILE_STATUS, &compile_status);
+
+        const bool did_compile = (compile_status == GL_TRUE); 
 
         ctx->error = did_compile ? GL_ERROR_SUCCESS : glGetError();
 
@@ -176,11 +177,11 @@ namespace sld {
         
         gl_context_clear_errors(ctx);
 
-        s32 success;
+        s32 link_status;
         glLinkProgram  (program);
-        glGetProgramiv (program, GL_LINK_STATUS, &success);
+        glGetProgramiv (program, GL_LINK_STATUS, &link_status);
 
-        const bool did_link = (success == GL_ERROR_SUCCESS);
+        const bool did_link = (link_status == GL_TRUE);
 
         ctx->error = did_link ? GL_ERROR_SUCCESS : glGetError();
 
