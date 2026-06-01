@@ -81,7 +81,6 @@ namespace sld {
     SLD_OPENGL_API bool        gl_context_set_vertex_object              (gl_context* ctx, const gl_vertex  vertex);
     SLD_OPENGL_API bool        gl_context_set_buffer                     (gl_context* ctx, const gl_buffer  buffer);
 
-
     //--------------------------------------------------------------------
     // SHADERS
     //--------------------------------------------------------------------
