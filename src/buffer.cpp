@@ -51,6 +51,9 @@ namespace sld {
 
         gl_context_clear_errors(ctx);
 
+        const bool did_set = gl_context_set_buffer_vertex(ctx, buffer);
+        assert(did_set);
+
         glBufferData(
             GL_ARRAY_BUFFER,
             data_size,
@@ -77,6 +80,9 @@ namespace sld {
         );
 
         gl_context_clear_errors(ctx);
+
+        const bool did_set = gl_context_set_buffer_element(ctx, buffer);
+        assert(did_set);
 
         glBufferData(
             GL_ELEMENT_ARRAY_BUFFER,

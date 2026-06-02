@@ -194,6 +194,41 @@ namespace sld {
         assert(ctx->error == GL_ERROR_SUCCESS);
     }
 
+    SLD_OPENGL_API void
+    gl_context_draw_elements(
+        gl_context* ctx,
+        const u32   count) {
+
+        assert(
+            ctx                 != NULL &&
+            ctx->program        != GL_ID_INVALID &&
+            ctx->vertex         != GL_ID_INVALID &&
+            ctx->vertex_buffer  != GL_ID_INVALID &&
+            ctx->element_buffer != GL_ID_INVALID
+        );
+
+        // for good measure, bind everything
+        glUseProgram(ctx->program);
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+        
+        glBindVertexArray(ctx->vertex);
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+
+        glBindBuffer(GL_ARRAY_BUFFER, ctx->vertex_buffer)
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ctx->element_buffer);
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+    
+        // draw elements
+        glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, 0);
+    }
+
+
     SLD_OPENGL_API bool
     gl_context_set_shader_program(
         gl_context*      ctx,
@@ -228,4 +263,37 @@ namespace sld {
         return(did_set);   
     }
 
+    SLD_OPENGL_API bool
+    gl_context_set_buffer_vertex(
+        gl_context*     ctx,
+        const gl_buffer buffer) {
+
+        assert(ctx && buffer != GL_ID_INVALID);
+
+        glBindBuffer(GL_ARRAY_BUFFER, buffer);
+   
+        ctx->error = glGetError();
+        
+        const bool did_set = (ctx->error == GL_ERROR_SUCCESS); 
+        ctx->vertex_buffer = did_set ? buffer : GL_ID_INVALID; 
+
+        return(did_set);  
+    }
+
+    SLD_OPENGL_API bool
+    gl_context_set_buffer_element(
+        gl_context*     ctx,
+        const gl_buffer buffer) {
+           
+        assert(ctx && buffer != GL_ID_INVALID);
+
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, buffer);
+   
+        ctx->error = glGetError();
+        
+        const bool did_set = (ctx->error == GL_ERROR_SUCCESS); 
+        ctx->element_buffer = did_set ? buffer : GL_ID_INVALID; 
+
+        return(did_set);   
+    }
 };
