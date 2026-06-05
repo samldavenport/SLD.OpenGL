@@ -121,7 +121,7 @@ namespace sld {
     SLD_OPENGL_API void
     gl_context_clear_viewport(
         gl_context* ctx) {
-        
+
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
@@ -194,18 +194,21 @@ namespace sld {
         assert(ctx->error == GL_ERROR_SUCCESS);
     }
 
-    SLD_OPENGL_API void
+    SLD_OPENGL_API bool
     gl_context_draw_elements(
         gl_context* ctx,
         const u32   count) {
 
         assert(
-            ctx                 != NULL &&
+            ctx                 != NULL          &&
+            count               != 0             &&
             ctx->program        != GL_ID_INVALID &&
             ctx->vertex         != GL_ID_INVALID &&
             ctx->vertex_buffer  != GL_ID_INVALID &&
             ctx->element_buffer != GL_ID_INVALID
         );
+
+        gl_context_clear_errors(ctx);
 
         // for good measure, bind everything
         glUseProgram(ctx->program);
@@ -216,7 +219,7 @@ namespace sld {
         ctx->error = glGetError();
         assert(ctx->error == GL_ERROR_SUCCESS);
 
-        glBindBuffer(GL_ARRAY_BUFFER, ctx->vertex_buffer)
+        glBindBuffer(GL_ARRAY_BUFFER, ctx->vertex_buffer);
         ctx->error = glGetError();
         assert(ctx->error == GL_ERROR_SUCCESS);
 
@@ -226,6 +229,9 @@ namespace sld {
     
         // draw elements
         glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, 0);
+        ctx->error = glGetError();
+
+        return(ctx->error == GL_ERROR_SUCCESS);
     }
 
 
@@ -233,6 +239,8 @@ namespace sld {
     gl_context_set_shader_program(
         gl_context*      ctx,
         const gl_program program) {
+
+        gl_context_clear_errors(ctx);
 
         assert(ctx && program != GL_ID_INVALID);
 
@@ -251,6 +259,8 @@ namespace sld {
         gl_context*      ctx,
         const gl_vertex  vertex) {
 
+        gl_context_clear_errors(ctx);
+
         assert(ctx && vertex != GL_ID_INVALID);
 
         glBindVertexArray(vertex);
@@ -268,6 +278,8 @@ namespace sld {
         gl_context*     ctx,
         const gl_buffer buffer) {
 
+        gl_context_clear_errors(ctx);
+
         assert(ctx && buffer != GL_ID_INVALID);
 
         glBindBuffer(GL_ARRAY_BUFFER, buffer);
@@ -284,7 +296,9 @@ namespace sld {
     gl_context_set_buffer_element(
         gl_context*     ctx,
         const gl_buffer buffer) {
-           
+
+        gl_context_clear_errors(ctx);
+
         assert(ctx && buffer != GL_ID_INVALID);
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, buffer);
