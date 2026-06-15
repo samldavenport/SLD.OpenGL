@@ -58,7 +58,7 @@ namespace sld {
             GL_BYTE,                          // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -94,7 +94,7 @@ namespace sld {
             GL_BYTE,                          // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -130,7 +130,7 @@ namespace sld {
             GL_BYTE,                          // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -166,7 +166,7 @@ namespace sld {
             GL_BYTE,                          // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -202,7 +202,7 @@ namespace sld {
             GL_UNSIGNED_BYTE,                 // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -237,7 +237,7 @@ namespace sld {
             GL_UNSIGNED_BYTE,                 // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -272,7 +272,7 @@ namespace sld {
             GL_UNSIGNED_BYTE,                 // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -307,7 +307,7 @@ namespace sld {
             GL_UNSIGNED_BYTE,                 // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -342,7 +342,7 @@ namespace sld {
             GL_SHORT,                         // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -378,7 +378,7 @@ namespace sld {
             GL_SHORT,                         // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -414,7 +414,7 @@ namespace sld {
             GL_SHORT,                         // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -450,7 +450,7 @@ namespace sld {
             GL_SHORT,                         // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -486,7 +486,7 @@ namespace sld {
             GL_UNSIGNED_SHORT,                // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -522,7 +522,7 @@ namespace sld {
             GL_UNSIGNED_SHORT,                // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -558,7 +558,7 @@ namespace sld {
             GL_UNSIGNED_SHORT,                // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -594,7 +594,7 @@ namespace sld {
             GL_UNSIGNED_SHORT,                // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
 
         ctx->error = glGetError();
@@ -630,7 +630,7 @@ namespace sld {
             GL_INT,                           // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -665,7 +665,7 @@ namespace sld {
             GL_INT,                           // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -700,7 +700,7 @@ namespace sld {
             GL_INT,                           // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -735,7 +735,7 @@ namespace sld {
             GL_INT,                           // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -770,7 +770,7 @@ namespace sld {
             GL_UNSIGNED_INT,                  // type
             GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -800,12 +800,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            attrib_index,                     // index
-            2,                                // size
-            GL_UNSIGNED_INT,                  // type
-            GL_FALSE,                         // normalized
-            vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            attrib_index,        // index
+            2,                   // size
+            GL_UNSIGNED_INT,     // type
+            GL_FALSE,            // normalized
+            vertex_size,         // stride
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -835,12 +835,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            attrib_index,                     // index
-            3,                                // size
-            GL_UNSIGNED_INT,                  // type
-            GL_FALSE,                         // normalized
-            vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            attrib_index,        // index
+            3,                   // size
+            GL_UNSIGNED_INT,     // type
+            GL_FALSE,            // normalized
+            vertex_size,         // stride
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -870,12 +870,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            attrib_index,                     // index
-            4,                                // size
-            GL_UNSIGNED_INT,                  // type
-            GL_FALSE,                         // normalized
-            vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            attrib_index,        // index
+            4,                   // size
+            GL_UNSIGNED_INT,     // type
+            GL_FALSE,            // normalized
+            vertex_size,         // stride
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -905,12 +905,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            attrib_index,                     // index
-            1,                                // size
-            GL_FLOAT,                         // type
-            GL_FALSE,                         // normalized
-            vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            attrib_index,        // index
+            1,                   // size
+            GL_FLOAT,            // type
+            GL_FALSE,            // normalized
+            vertex_size,         // stride
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -940,12 +940,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            attrib_index,                     // index
-            2,                                // size
-            GL_FLOAT,                         // type
-            GL_FALSE,                         // normalized
-            vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            attrib_index,        // index
+            2,                   // size
+            GL_FLOAT,            // type
+            GL_FALSE,            // normalized
+            vertex_size,         // stride
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -975,12 +975,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            attrib_index,                     // index
-            3,                                // size
-            GL_FLOAT,                         // type
-            GL_FALSE,                         // normalized
-            vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            attrib_index,        // index
+            3,                   // size
+            GL_FLOAT,            // type
+            GL_FALSE,            // normalized
+            vertex_size,         // stride
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -1010,12 +1010,12 @@ namespace sld {
         assert(ctx->vertex == vertex);
  
         glVertexAttribPointer(
-            attrib_index,                     // index
-            4,                                // size
-            GL_FLOAT,                         // type
-            GL_FALSE,                         // normalized
-            vertex_size,                      // stride
-            (void*)((byte*)0 + attrib_offset) // pointer
+            attrib_index,        // index
+            4,                   // size
+            GL_FLOAT,            // type
+            GL_FALSE,            // normalized
+            vertex_size,         // stride
+            (void*)(uintptr_t)attrib_offset // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
