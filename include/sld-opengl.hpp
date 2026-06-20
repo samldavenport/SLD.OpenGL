@@ -62,9 +62,10 @@ namespace sld {
     // CONSTANTS
     //-------------------------------------------------------------------
 
-    constexpr gl_error GL_ERROR_SUCCESS      = 0;
-    constexpr gl_id    GL_ID_INVALID         = 0;
-    constexpr f32      GL_NORMAL_FACTOR      = (1.0f / 255.0f);
+    constexpr gl_error   GL_ERROR_SUCCESS   = 0;
+    constexpr gl_id      GL_ID_INVALID      = 0;
+    constexpr f32        GL_NORMAL_FACTOR   = (1.0f / 255.0f);
+    constexpr gl_uniform GL_UNIFORM_INVALID = -1;
 
     //--------------------------------------------------------------------
     // CONTEXT
@@ -151,7 +152,7 @@ namespace sld {
     //--------------------------------------------------------------------
     
 
-    SLD_OPENGL_API gl_uniform gl_uniform_get_location (gl_context* ctx, const gl_program prog, const cchar8* uniform_cstr);
+    SLD_OPENGL_API gl_uniform gl_uniform_get_location (gl_context* ctx, const gl_program prog,    const cchar8* uniform_cstr);
     SLD_OPENGL_API bool       gl_uniform_set_u32x1    (gl_context* ctx, const gl_uniform uniform, const f32  val);
     SLD_OPENGL_API bool       gl_uniform_set_u32x2    (gl_context* ctx, const gl_uniform uniform, const f32* val);
     SLD_OPENGL_API bool       gl_uniform_set_u32x3    (gl_context* ctx, const gl_uniform uniform, const f32* val);
