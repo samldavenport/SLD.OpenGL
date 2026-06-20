@@ -175,7 +175,14 @@ namespace sld {
         const u32   width,
         const u32   height) {
 
-        assert(ctx != NULL && ctx->platform_handle != NULL);
+        assert(ctx != NULL);
+
+        // if the platform handle is null,
+        // we can assume initialization hasn't happened yet
+        if (ctx->platform_handle == NULL) {
+            return;
+        }
+
         gl_context_clear_errors(ctx);
 
         ctx->viewport.pos_x  = pos_x;
