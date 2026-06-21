@@ -223,10 +223,10 @@ namespace sld {
 
         gl_context_clear_errors(ctx);
         glUniformMatrix4fv(
-            uniform,    // uniform location
-            1,          // number of matrices
-            GL_FALSE,   // transpose?
-            val         // pointer to 16 floats
+            uniform, // uniform location
+            1,       // number of matrices
+            GL_TRUE, // transpose?
+            val      // pointer to 16 floats
         );
         ctx->error = glGetError();
 

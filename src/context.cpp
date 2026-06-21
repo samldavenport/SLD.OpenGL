@@ -246,7 +246,6 @@ namespace sld {
         gl_context* ctx,
         const u32 count) {
 
-
         assert(
             ctx                 != NULL          &&
             count               != 0             &&
@@ -275,6 +274,41 @@ namespace sld {
         ctx->error = glGetError();
 
         return(ctx->error == GL_ERROR_SUCCESS);
+    }
+
+    SLD_OPENGL_API bool
+    gl_context_draw_lines(
+        gl_context* ctx,
+        const u32   count) {
+
+        assert(
+            ctx                 != NULL          &&
+            count               != 0             &&
+            ctx->program        != GL_ID_INVALID &&
+            ctx->vertex         != GL_ID_INVALID &&
+            ctx->vertex_buffer  != GL_ID_INVALID
+        );
+
+        gl_context_clear_errors(ctx);
+
+        // for good measure, bind everything
+        glUseProgram(ctx->program);
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+        
+        glBindVertexArray(ctx->vertex);
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+
+        glBindBuffer(GL_ARRAY_BUFFER, ctx->vertex_buffer);
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+    
+        // draw lines
+        glDrawArrays(GL_LINES, 0, count);
+        ctx->error = glGetError();
+
+        return(ctx->error == GL_ERROR_SUCCESS);  
     }
 
     SLD_OPENGL_API bool
