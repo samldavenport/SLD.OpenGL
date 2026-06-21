@@ -6,3 +6,4 @@
 #include "shader.cpp"
 #include "vertex.cpp"
 #include "buffer.cpp"
+#include "uniform.cpp"

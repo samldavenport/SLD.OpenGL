@@ -150,7 +150,6 @@ namespace sld {
     //--------------------------------------------------------------------
     // UNIFORMS
     //--------------------------------------------------------------------
-    
 
     SLD_OPENGL_API gl_uniform gl_uniform_get_location (gl_context* ctx, const gl_program prog,    const cchar8* uniform_cstr);
     SLD_OPENGL_API bool       gl_uniform_set_u32x1    (gl_context* ctx, const gl_uniform uniform, const f32  val);
@@ -165,6 +164,7 @@ namespace sld {
     SLD_OPENGL_API bool       gl_uniform_set_f32x2    (gl_context* ctx, const gl_uniform uniform, const f32* val);
     SLD_OPENGL_API bool       gl_uniform_set_f32x3    (gl_context* ctx, const gl_uniform uniform, const f32* val);
     SLD_OPENGL_API bool       gl_uniform_set_f32x4    (gl_context* ctx, const gl_uniform uniform, const f32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_mat4     (gl_context* ctx, const gl_uniform uniform, const f32* val);
 };
 
 #endif //SLD_OPENGL_HPP
