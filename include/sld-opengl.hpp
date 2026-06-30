@@ -98,7 +98,7 @@ namespace sld {
     SLD_OPENGL_API gl_shader  gl_shader_stage_create_tess_ctrl    (gl_context* ctx);
     SLD_OPENGL_API gl_shader  gl_shader_stage_create_tess_eval    (gl_context* ctx);
     SLD_OPENGL_API void       gl_shader_stage_destroy             (gl_context* ctx, const gl_shader shader);
-    SLD_OPENGL_API bool       gl_shader_stage_compile_from_source (gl_context* ctx, const gl_shader shader, const cchar8* src_ptr, const u32 src_size);
+    SLD_OPENGL_API bool       gl_shader_stage_compile_from_source (gl_context* ctx, const gl_shader shader, const cchar* src_ptr, const u32 src_size);
     SLD_OPENGL_API gl_program gl_shader_program_create            (gl_context* ctx);
     SLD_OPENGL_API void       gl_shader_program_destroy           (gl_context* ctx, const gl_program program);
     SLD_OPENGL_API bool       gl_shader_program_attach_stage      (gl_context* ctx, const gl_program program, const gl_shader shader);
@@ -152,7 +152,7 @@ namespace sld {
     // UNIFORMS
     //--------------------------------------------------------------------
 
-    SLD_OPENGL_API gl_uniform gl_uniform_get_location (gl_context* ctx, const gl_program prog,    const cchar8* uniform_cstr);
+    SLD_OPENGL_API gl_uniform gl_uniform_get_location (gl_context* ctx, const gl_program prog,    const cchar* uniform_cstr);
     SLD_OPENGL_API bool       gl_uniform_set_u32x1    (gl_context* ctx, const gl_uniform uniform, const f32  val);
     SLD_OPENGL_API bool       gl_uniform_set_u32x2    (gl_context* ctx, const gl_uniform uniform, const f32* val);
     SLD_OPENGL_API bool       gl_uniform_set_u32x3    (gl_context* ctx, const gl_uniform uniform, const f32* val);

@@ -8,7 +8,7 @@ namespace sld {
     gl_uniform_get_location(
         gl_context* ctx,
         const gl_program prog,
-        const cchar8* uniform_cstr) {
+        const cchar* uniform_cstr) {
 
         gl_context_clear_errors(ctx);
         assert(ctx && prog && uniform_cstr);
