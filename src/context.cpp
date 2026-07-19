@@ -280,14 +280,12 @@ namespace sld {
     gl_context_draw_lines(
         gl_context* ctx,
         const u32   count) {
-
-        assert(
-            ctx                 != NULL          &&
-            count               != 0             &&
-            ctx->program        != GL_ID_INVALID &&
-            ctx->vertex         != GL_ID_INVALID &&
-            ctx->vertex_buffer  != GL_ID_INVALID
-        );
+        
+        assert(ctx                != NULL);
+        assert(count              != 0);
+        assert(ctx->program       != GL_ID_INVALID);
+        assert(ctx->vertex        != GL_ID_INVALID);
+        assert(ctx->vertex_buffer != GL_ID_INVALID);
 
         gl_context_clear_errors(ctx);
 
