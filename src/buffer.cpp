@@ -41,13 +41,11 @@ namespace sld {
         const gl_buffer buffer,
         const byte*     data_ptr,
         const u32       data_size) {
-
-        assert(
-            ctx       != NULL          &&
-            buffer    != GL_ID_INVALID &&
-            data_ptr  != NULL          &&
-            data_size != 0
-        );
+        
+        assert(ctx       != NULL);
+        assert(buffer    != GL_ID_INVALID);
+        assert(data_ptr  != NULL);
+        assert(data_size != 0);
 
         gl_context_clear_errors(ctx);
 
@@ -71,13 +69,11 @@ namespace sld {
         const gl_buffer buffer,
         const byte*     data_ptr,
         const u32       data_size) {
-
-        assert(
-            ctx       != NULL          &&
-            buffer    != GL_ID_INVALID &&
-            data_ptr  != NULL          &&
-            data_size != 0
-        );
+        
+        assert(ctx       != NULL);
+        assert(buffer    != GL_ID_INVALID);
+        assert(data_ptr  != NULL);
+        assert(data_size != 0);
 
         gl_context_clear_errors(ctx);
 
