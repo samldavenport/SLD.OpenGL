@@ -143,10 +143,12 @@ namespace sld {
     // BUFFERS
     //--------------------------------------------------------------------
 
-    SLD_OPENGL_API gl_buffer gl_buffer_create           (gl_context* ctx);
-    SLD_OPENGL_API bool      gl_buffer_destroy          (gl_context* ctx, const gl_buffer buffer);
-    SLD_OPENGL_API bool      gl_buffer_set_vertex_data  (gl_context* ctx, const gl_buffer buffer, const byte* data_ptr, const u32 data_size);
-    SLD_OPENGL_API bool      gl_buffer_set_element_data (gl_context* ctx, const gl_buffer buffer, const byte* data_ptr, const u32 data_size);
+    SLD_OPENGL_API gl_buffer gl_buffer_create              (gl_context* ctx);
+    SLD_OPENGL_API bool      gl_buffer_destroy             (gl_context* ctx, const gl_buffer buffer);
+    SLD_OPENGL_API bool      gl_buffer_set_vertex_data     (gl_context* ctx, const gl_buffer buffer, const byte* data_ptr, const u32 data_size);
+    SLD_OPENGL_API bool      gl_buffer_set_element_data    (gl_context* ctx, const gl_buffer buffer, const byte* data_ptr, const u32 data_size);
+    SLD_OPENGL_API bool      gl_buffer_update_vertex_data  (gl_context* ctx, const gl_buffer buffer, const byte* data_ptr, const u32 data_size);
+    SLD_OPENGL_API bool      gl_buffer_update_element_data (gl_context* ctx, const gl_buffer buffer, const byte* data_ptr, const u32 data_size);
 
     //--------------------------------------------------------------------
     // UNIFORMS

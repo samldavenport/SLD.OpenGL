@@ -90,4 +90,63 @@ namespace sld {
         ctx->error = glGetError();
         return(ctx->error == GL_ERROR_SUCCESS);
     }
+
+    
+    SLD_OPENGL_API bool
+    gl_buffer_update_vertex_data(
+        gl_context*     ctx,
+        const gl_buffer buffer,
+        const byte*     data_ptr,
+        const u32       data_size) {
+        
+        assert(ctx       != NULL);
+        assert(buffer    != GL_ID_INVALID);
+        assert(data_ptr  != NULL);
+        assert(data_size != 0);
+
+        gl_context_clear_errors(ctx);
+
+        const bool did_set = gl_context_set_buffer_vertex(ctx, buffer);
+        assert(did_set);
+
+        glBufferSubData(
+            GL_ARRAY_BUFFER,
+            0,
+            data_size,
+            data_ptr
+        );
+
+        ctx->error = glGetError();
+        return(ctx->error == GL_ERROR_SUCCESS);
+    }
+
+        
+    SLD_OPENGL_API bool
+    gl_buffer_update_element_data(
+        gl_context*     ctx,
+        const gl_buffer buffer,
+        const byte*     data_ptr,
+        const u32       data_size) {
+        
+        assert(ctx       != NULL);
+        assert(buffer    != GL_ID_INVALID);
+        assert(data_ptr  != NULL);
+        assert(data_size != 0);
+
+        gl_context_clear_errors(ctx);
+
+        const bool did_set = gl_context_set_buffer_element(ctx, buffer);
+        assert(did_set);
+
+        glBufferSubData(
+            GL_ELEMENT_ARRAY_BUFFER,
+            0,
+            data_size,
+            data_ptr
+        );
+
+        ctx->error = glGetError();
+        return(ctx->error == GL_ERROR_SUCCESS);
+    }
+
 };
