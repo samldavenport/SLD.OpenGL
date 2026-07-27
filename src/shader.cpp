@@ -110,7 +110,7 @@ namespace sld {
     gl_shader_stage_compile_from_source(
         gl_context*     ctx,
         const gl_shader shader,
-        const cchar8*   src_ptr,
+        const cchar*   src_ptr,
         const u32       src_size) {
 
         gl_context_clear_errors(ctx);
