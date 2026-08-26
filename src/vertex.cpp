@@ -37,6 +37,23 @@ namespace sld {
     }
 
     SLD_OPENGL_API bool
+    gl_vertex_divisor(
+        gl_context* ctx, 
+        const gl_vertex vertex,
+        const u32       index,
+        const u32       divisor) {
+
+        assert(ctx && vertex != GL_ID_INVALID);
+        gl_context_clear_errors(ctx);
+
+        glVertexAttribDivisor(index, divisor);
+
+        ctx->error = glGetError();
+
+        return(ctx->error == GL_ERROR_SUCCESS);
+    }
+    
+    SLD_OPENGL_API bool
     gl_vertex_add_attribute_s8x1(
         gl_context*     ctx,
         const gl_vertex vertex,
@@ -52,13 +69,12 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             1,                                // size
             GL_BYTE,                          // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)(uintptr_t)attrib_offset // pointer
+            (void*)(uintptr_t)attrib_offset   // pointer
         );
 
         ctx->error = glGetError();
@@ -88,11 +104,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             2,                                // size
             GL_BYTE,                          // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -124,11 +139,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             3,                                // size
             GL_BYTE,                          // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -160,11 +174,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             4,                                // size
             GL_BYTE,                          // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -196,13 +209,12 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             1,                                // size
             GL_UNSIGNED_BYTE,                 // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)(uintptr_t)attrib_offset // pointer
+            (void*)(uintptr_t)attrib_offset   // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -231,11 +243,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             2,                                // size
             GL_UNSIGNED_BYTE,                 // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -266,11 +277,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             3,                                // size
             GL_UNSIGNED_BYTE,                 // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -301,11 +311,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             4,                                // size
             GL_UNSIGNED_BYTE,                 // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -336,11 +345,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             1,                                // size
             GL_SHORT,                         // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -372,11 +380,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             2,                                // size
             GL_SHORT,                         // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -408,11 +415,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             3,                                // size
             GL_SHORT,                         // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -444,11 +450,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             4,                                // size
             GL_SHORT,                         // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -480,11 +485,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             1,                                // size
             GL_UNSIGNED_SHORT,                // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -516,11 +520,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             2,                                // size
             GL_UNSIGNED_SHORT,                // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -552,11 +555,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             3,                                // size
             GL_UNSIGNED_SHORT,                // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -588,11 +590,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             4,                                // size
             GL_UNSIGNED_SHORT,                // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -624,11 +625,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             1,                                // size
             GL_INT,                           // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -659,11 +659,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             2,                                // size
             GL_INT,                           // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -694,13 +693,12 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             3,                                // size
             GL_INT,                           // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
-            (void*)(uintptr_t)attrib_offset // pointer
+            (void*)(uintptr_t)attrib_offset   // pointer
         );
         ctx->error = glGetError();
         if (ctx->error != GL_ERROR_SUCCESS) {
@@ -729,11 +727,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             4,                                // size
             GL_INT,                           // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -764,11 +761,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,                     // index
             1,                                // size
             GL_UNSIGNED_INT,                  // type
-            GL_FALSE,                         // normalized
             vertex_size,                      // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -799,11 +795,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,        // index
             2,                   // size
             GL_UNSIGNED_INT,     // type
-            GL_FALSE,            // normalized
             vertex_size,         // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -834,11 +829,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,        // index
             3,                   // size
             GL_UNSIGNED_INT,     // type
-            GL_FALSE,            // normalized
             vertex_size,         // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
@@ -869,11 +863,10 @@ namespace sld {
         }
         assert(ctx->vertex == vertex);
  
-        glVertexAttribPointer(
+        glVertexAttribIPointer(
             attrib_index,        // index
             4,                   // size
             GL_UNSIGNED_INT,     // type
-            GL_FALSE,            // normalized
             vertex_size,         // stride
             (void*)(uintptr_t)attrib_offset // pointer
         );
