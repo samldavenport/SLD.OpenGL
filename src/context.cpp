@@ -274,9 +274,8 @@ namespace sld {
             count_instances
         );
         ctx->error = glGetError();
-        assert(ctx->error == GL_ERROR_SUCCESS);
         
-        return(true);
+        return(ctx->error == GL_ERROR_SUCCESS);
     }
     
     SLD_OPENGL_API bool
