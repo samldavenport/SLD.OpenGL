@@ -1,6 +1,7 @@
 #pragma once
 
 #include "sld-opengl.hpp"
+#include <cstddef>
 
 namespace sld {
 
@@ -241,6 +242,43 @@ namespace sld {
         return(ctx->error == GL_ERROR_SUCCESS);
     }
 
+    SLD_OPENGL_API bool
+    gl_context_draw_elements_instanced(
+        gl_context* ctx,
+        const u32   count_elements_per_instance,
+        const u32   count_instances) {
+
+        assert(
+            ctx                         != NULL          &&
+            count_elements_per_instance != 0             &&
+            count_instances             != 0             &&
+            ctx->program                != GL_ID_INVALID &&
+            ctx->vertex                 != GL_ID_INVALID
+        );
+
+        gl_context_clear_errors(ctx);
+
+        glUseProgram(ctx->program);
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+
+        glBindVertexArray(ctx->vertex);
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+    
+        glDrawElementsInstanced(
+            GL_TRIANGLES,
+            count_elements_per_instance,
+            GL_UNSIGNED_INT,
+            NULL,
+            count_instances
+        );
+        ctx->error = glGetError();
+        assert(ctx->error == GL_ERROR_SUCCESS);
+        
+        return(true);
+    }
+    
     SLD_OPENGL_API bool
     gl_context_draw_vertices(
         gl_context* ctx,

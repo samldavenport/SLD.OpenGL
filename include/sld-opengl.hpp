@@ -71,21 +71,22 @@ namespace sld {
     // CONTEXT
     //--------------------------------------------------------------------
 
-    SLD_OPENGL_API void gl_context_init_win32             (gl_context* ctx, const HWND window_handle);
-    SLD_OPENGL_API void gl_context_clear_errors           (gl_context* ctx);
-    SLD_OPENGL_API void gl_context_enable_depth_buffering (gl_context* ctx);
-    SLD_OPENGL_API void gl_context_enable_smoothing       (gl_context* ctx);
-    SLD_OPENGL_API void gl_context_clear_viewport         (gl_context* ctx);
-    SLD_OPENGL_API void gl_context_update_viewport        (gl_context* ctx, const u32 pos_x, const u32 pos_y, const u32 width, const u32 height);
-    SLD_OPENGL_API bool gl_context_draw_vertices          (gl_context* ctx, const u32 count);
-    SLD_OPENGL_API bool gl_context_draw_elements          (gl_context* ctx, const u32 count);
-    SLD_OPENGL_API bool gl_context_draw_lines             (gl_context* ctx, const u32 count);
-    SLD_OPENGL_API void gl_context_set_clear_color_rgba   (gl_context* ctx, color_rgba_u32& color);
-    SLD_OPENGL_API void gl_context_set_clear_color_hex    (gl_context* ctx, color_rgba_f32& color);
-    SLD_OPENGL_API bool gl_context_set_shader_program     (gl_context* ctx, const gl_program program);
-    SLD_OPENGL_API bool gl_context_set_vertex_object      (gl_context* ctx, const gl_vertex  vertex);
-    SLD_OPENGL_API bool gl_context_set_buffer_vertex      (gl_context* ctx, const gl_buffer  buffer);
-    SLD_OPENGL_API bool gl_context_set_buffer_element     (gl_context* ctx, const gl_buffer  buffer);
+    SLD_OPENGL_API void gl_context_init_win32              (gl_context* ctx, const HWND window_handle);
+    SLD_OPENGL_API void gl_context_clear_errors            (gl_context* ctx);
+    SLD_OPENGL_API void gl_context_enable_depth_buffering  (gl_context* ctx);
+    SLD_OPENGL_API void gl_context_enable_smoothing        (gl_context* ctx);
+    SLD_OPENGL_API void gl_context_clear_viewport          (gl_context* ctx);
+    SLD_OPENGL_API void gl_context_update_viewport         (gl_context* ctx, const u32 pos_x, const u32 pos_y, const u32 width, const u32 height);
+    SLD_OPENGL_API bool gl_context_draw_vertices           (gl_context* ctx, const u32 count);
+    SLD_OPENGL_API bool gl_context_draw_elements           (gl_context* ctx, const u32 count);
+    SLD_OPENGL_API bool gl_context_draw_elements_instanced (gl_context* ctx, const u32 count);
+    SLD_OPENGL_API bool gl_context_draw_lines              (gl_context* ctx, const u32 count);
+    SLD_OPENGL_API void gl_context_set_clear_color_rgba    (gl_context* ctx, color_rgba_u32& color);
+    SLD_OPENGL_API void gl_context_set_clear_color_hex     (gl_context* ctx, color_rgba_f32& color);
+    SLD_OPENGL_API bool gl_context_set_shader_program      (gl_context* ctx, const gl_program program);
+    SLD_OPENGL_API bool gl_context_set_vertex_object       (gl_context* ctx, const gl_vertex  vertex);
+    SLD_OPENGL_API bool gl_context_set_buffer_vertex       (gl_context* ctx, const gl_buffer  buffer);
+    SLD_OPENGL_API bool gl_context_set_buffer_element      (gl_context* ctx, const gl_buffer  buffer);
 
     //--------------------------------------------------------------------
     // SHADERS
