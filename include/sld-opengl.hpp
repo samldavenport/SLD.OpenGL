@@ -79,7 +79,8 @@ namespace sld {
     SLD_OPENGL_API void gl_context_update_viewport         (gl_context* ctx, const u32 pos_x, const u32 pos_y, const u32 width, const u32 height);
     SLD_OPENGL_API bool gl_context_draw_vertices           (gl_context* ctx, const u32 count);
     SLD_OPENGL_API bool gl_context_draw_elements           (gl_context* ctx, const u32 count);
-    SLD_OPENGL_API bool gl_context_draw_elements_instanced (gl_context* ctx, const u32 count);
+    SLD_OPENGL_API bool gl_context_draw_vertices_instanced (gl_context* ctx, const u32 count_elmnt_per_inst, const u32 count_inst);
+    SLD_OPENGL_API bool gl_context_draw_elements_instanced (gl_context* ctx, const u32 count_elmnt_per_inst, const u32 count_inst);
     SLD_OPENGL_API bool gl_context_draw_lines              (gl_context* ctx, const u32 count);
     SLD_OPENGL_API void gl_context_set_clear_color_rgba    (gl_context* ctx, color_rgba_u32& color);
     SLD_OPENGL_API void gl_context_set_clear_color_hex     (gl_context* ctx, color_rgba_f32& color);
