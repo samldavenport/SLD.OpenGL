@@ -94,7 +94,7 @@ namespace sld {
         ctx->error = glGetError();
         assert(ctx->error == GL_ERROR_SUCCESS);
 
-	    glDepthFunc (GL_LESS);
+	    glDepthFunc (GL_ALWAYS);
         ctx->error = glGetError();
         assert(ctx->error == GL_ERROR_SUCCESS);
     }
