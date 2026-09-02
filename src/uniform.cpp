@@ -24,7 +24,7 @@ namespace sld {
     gl_uniform_set_u32x1(
         gl_context*      ctx,
         const gl_uniform uniform,
-        const f32        val) {
+        const u32        val) {
 
         assert(ctx && uniform >= 0);
 
@@ -40,7 +40,7 @@ namespace sld {
     gl_uniform_set_u32x2(
         gl_context*      ctx,
         const gl_uniform uniform,
-        const f32*       val) {
+        const u32*       val) {
 
         assert(ctx && uniform >= 0 && val);
 
@@ -56,7 +56,7 @@ namespace sld {
     gl_uniform_set_u32x3(
         gl_context*      ctx,
         const gl_uniform uniform,
-        const f32*       val) {
+        const u32*       val) {
 
         assert(ctx && uniform >= 0 && val);
 
@@ -72,7 +72,7 @@ namespace sld {
     gl_uniform_set_u32x4(
         gl_context*      ctx,
         const gl_uniform uniform,
-        const f32*       val) {
+        const u32*       val) {
 
         assert(ctx && uniform >= 0 && val);
 
@@ -88,7 +88,7 @@ namespace sld {
     gl_uniform_set_s32x1(
         gl_context*      ctx,
         const gl_uniform uniform,
-        const f32        val) {
+        const s32        val) {
 
         assert(ctx && uniform >= 0);
 
@@ -104,7 +104,7 @@ namespace sld {
     gl_uniform_set_s32x2(
         gl_context*      ctx,
         const gl_uniform uniform,
-        const f32*       val) {
+        const s32*       val) {
 
         assert(ctx && uniform >= 0 && val);
 
@@ -120,7 +120,7 @@ namespace sld {
     gl_uniform_set_s32x3(
         gl_context*      ctx,
         const gl_uniform uniform,
-        const f32*       val) {
+        const s32*       val) {
 
         assert(ctx && uniform >= 0 && val);
 
@@ -136,7 +136,7 @@ namespace sld {
     gl_uniform_set_s32x4(
         gl_context*      ctx,
         const gl_uniform uniform,
-        const f32*       val) {
+        const s32*       val) {
 
         assert(ctx && uniform >= 0 && val);
 
