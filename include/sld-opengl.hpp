@@ -161,20 +161,22 @@ namespace sld {
     // UNIFORMS
     //--------------------------------------------------------------------
 
-    SLD_OPENGL_API gl_uniform gl_uniform_get_location (gl_context* ctx, const gl_program prog,    const cchar* uniform_cstr);
-    SLD_OPENGL_API bool       gl_uniform_set_u32x1    (gl_context* ctx, const gl_uniform uniform, const u32  val);
-    SLD_OPENGL_API bool       gl_uniform_set_u32x2    (gl_context* ctx, const gl_uniform uniform, const u32* val);
-    SLD_OPENGL_API bool       gl_uniform_set_u32x3    (gl_context* ctx, const gl_uniform uniform, const u32* val);
-    SLD_OPENGL_API bool       gl_uniform_set_u32x4    (gl_context* ctx, const gl_uniform uniform, const u32* val);
-    SLD_OPENGL_API bool       gl_uniform_set_s32x1    (gl_context* ctx, const gl_uniform uniform, const s32  val);
-    SLD_OPENGL_API bool       gl_uniform_set_s32x2    (gl_context* ctx, const gl_uniform uniform, const s32* val);
-    SLD_OPENGL_API bool       gl_uniform_set_s32x3    (gl_context* ctx, const gl_uniform uniform, const s32* val);
-    SLD_OPENGL_API bool       gl_uniform_set_s32x4    (gl_context* ctx, const gl_uniform uniform, const s32* val);
-    SLD_OPENGL_API bool       gl_uniform_set_f32x1    (gl_context* ctx, const gl_uniform uniform, const f32  val);
-    SLD_OPENGL_API bool       gl_uniform_set_f32x2    (gl_context* ctx, const gl_uniform uniform, const f32* val);
-    SLD_OPENGL_API bool       gl_uniform_set_f32x3    (gl_context* ctx, const gl_uniform uniform, const f32* val);
-    SLD_OPENGL_API bool       gl_uniform_set_f32x4    (gl_context* ctx, const gl_uniform uniform, const f32* val);
-    SLD_OPENGL_API bool       gl_uniform_set_mat4     (gl_context* ctx, const gl_uniform uniform, const f32* val);
+    SLD_OPENGL_API gl_uniform gl_uniform_get_location  (gl_context* ctx, const gl_program prog,    const cchar* uniform_cstr);
+    SLD_OPENGL_API bool       gl_uniform_set_u32x1     (gl_context* ctx, const gl_uniform uniform, const u32  val);
+    SLD_OPENGL_API bool       gl_uniform_set_u32x2     (gl_context* ctx, const gl_uniform uniform, const u32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_u32x3     (gl_context* ctx, const gl_uniform uniform, const u32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_u32x4     (gl_context* ctx, const gl_uniform uniform, const u32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_s32x1     (gl_context* ctx, const gl_uniform uniform, const s32  val);
+    SLD_OPENGL_API bool       gl_uniform_set_s32x2     (gl_context* ctx, const gl_uniform uniform, const s32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_s32x3     (gl_context* ctx, const gl_uniform uniform, const s32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_s32x4     (gl_context* ctx, const gl_uniform uniform, const s32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_f32x1     (gl_context* ctx, const gl_uniform uniform, const f32  val);
+    SLD_OPENGL_API bool       gl_uniform_set_f32x2     (gl_context* ctx, const gl_uniform uniform, const f32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_f32x3     (gl_context* ctx, const gl_uniform uniform, const f32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_f32x4     (gl_context* ctx, const gl_uniform uniform, const f32* val);
+    SLD_OPENGL_API bool       gl_uniform_set_f32_array (gl_context* ctx, const gl_uniform uniform, const f32* val, const u32 count);
+    SLD_OPENGL_API bool       gl_uniform_set_mat4      (gl_context* ctx, const gl_uniform uniform, const f32* val);
+    
 };
 
 #endif //SLD_OPENGL_HPP

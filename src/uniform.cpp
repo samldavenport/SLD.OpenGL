@@ -1,6 +1,7 @@
 #pragma once
 
 #include "sld-opengl.hpp"
+#include <cassert>
 
 namespace sld {
 
@@ -233,4 +234,30 @@ namespace sld {
         return(ctx->error == GL_ERROR_SUCCESS);
     }
 
+    SLD_OPENGL_API bool
+    gl_uniform_set_f32_array(
+        gl_context* ctx,
+        const gl_uniform uniform,
+        const f32*       val,
+        const u32        count) {
+
+        assert(
+            ctx     != NULL &&
+            uniform >= 0    &&
+            val     != NULL &&
+            count   != 0
+        );
+
+        gl_context_clear_errors(ctx);
+
+        glUniform4fv(
+            uniform,
+            count,
+            val
+        );
+
+        ctx->error = glGetError();
+
+        return(ctx->error == GL_ERROR_SUCCESS);
+    }
 };
