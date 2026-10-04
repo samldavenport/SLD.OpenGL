@@ -1,6 +1,6 @@
 #pragma once
 
-#define SLD_DLL_EXPORT
+#define SLD_OPENGL_DLL_EXPORT
 
 #include "context.cpp"
 #include "shader.cpp"

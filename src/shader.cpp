@@ -120,14 +120,36 @@ namespace sld {
         glShaderSource  (shader, 1, gl_src_ptr, gl_src_size);
         glCompileShader (shader);
 
-        s32 compile_status;
+        s32 compile_status = GL_FALSE;
         glGetShaderiv(shader, GL_COMPILE_STATUS, &compile_status);
 
         const bool did_compile = (compile_status == GL_TRUE); 
 
+        // a failed compile doesn't raise a gl error,
+        // so fall back to our own if the queue is empty
         ctx->error = did_compile ? GL_ERROR_SUCCESS : glGetError();
+        if (!did_compile && ctx->error == GL_ERROR_SUCCESS) {
+            ctx->error = GL_ERROR_COMPILE;
+        }
 
         return(did_compile);
+    }
+
+    SLD_OPENGL_API u32
+    gl_shader_stage_get_info_log(
+        gl_context*     ctx,
+        const gl_shader shader,
+        cchar*          log_ptr,
+        const u32       log_size) {
+
+        assert(ctx && shader != GL_ID_INVALID && log_ptr && log_size != 0);
+
+        // length written, not including the null terminator
+        GLsizei log_length = 0;
+        log_ptr[0]         = 0;
+        glGetShaderInfoLog(shader, log_size, &log_length, log_ptr);
+
+        return(log_length);
     }
 
     SLD_OPENGL_API gl_program
@@ -177,14 +199,36 @@ namespace sld {
         
         gl_context_clear_errors(ctx);
 
-        s32 link_status;
+        s32 link_status = GL_FALSE;
         glLinkProgram  (program);
         glGetProgramiv (program, GL_LINK_STATUS, &link_status);
 
         const bool did_link = (link_status == GL_TRUE);
 
+        // a failed link doesn't raise a gl error,
+        // so fall back to our own if the queue is empty
         ctx->error = did_link ? GL_ERROR_SUCCESS : glGetError();
+        if (!did_link && ctx->error == GL_ERROR_SUCCESS) {
+            ctx->error = GL_ERROR_LINK;
+        }
 
         return(did_link); 
+    }
+
+    SLD_OPENGL_API u32
+    gl_shader_program_get_info_log(
+        gl_context*      ctx,
+        const gl_program program,
+        cchar*           log_ptr,
+        const u32        log_size) {
+
+        assert(ctx && program != GL_ID_INVALID && log_ptr && log_size != 0);
+
+        // length written, not including the null terminator
+        GLsizei log_length = 0;
+        log_ptr[0]         = 0;
+        glGetProgramInfoLog(program, log_size, &log_length, log_ptr);
+
+        return(log_length);
     }
 };

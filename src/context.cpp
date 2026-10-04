@@ -24,6 +24,8 @@ namespace sld {
         preferred_format_descriptor.dwFlags    = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER;
         preferred_format_descriptor.iPixelType = PFD_TYPE_RGBA;
         preferred_format_descriptor.cColorBits = 32;
+        preferred_format_descriptor.cDepthBits   = 24;
+        preferred_format_descriptor.cStencilBits = 8;
         
         // set the pixel format
         const s32   chosen_pixel_format   = ChoosePixelFormat (device_context, &preferred_format_descriptor);
