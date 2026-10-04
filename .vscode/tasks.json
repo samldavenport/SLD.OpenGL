@@ -3,9 +3,16 @@
 	"tasks": [
 		{
 			"label": "Build Win32 Debug",
-			"command": "${workspaceFolder}/scripts/build-debug.bat",
+			"type": "process",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy", "Bypass",
+				"-File", "${workspaceFolder}/scripts/Build-SLDOpenGL.ps1",
+				"-Config", "Debug"
+			],
 			"options": {
-				"cwd": "${workspaceFolder}/scripts"
+				"cwd": "${workspaceFolder}"
 			},
 			"problemMatcher": [
 				"$msCompile"
