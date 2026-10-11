@@ -33,6 +33,8 @@ target_sources(sld_opengl PRIVATE
     src/vertex.cpp
     src/buffer.cpp
     src/uniform.cpp
+    src/texture.cpp
+    src/framebuffer.cpp
     include/sld-opengl.hpp
 )
 set_source_files_properties(
@@ -41,6 +43,8 @@ set_source_files_properties(
     src/vertex.cpp
     src/buffer.cpp
     src/uniform.cpp
+    src/texture.cpp
+    src/framebuffer.cpp
     PROPERTIES HEADER_FILE_ONLY ON
 )
 

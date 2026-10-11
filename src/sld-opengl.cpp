@@ -7,3 +7,5 @@
 #include "vertex.cpp"
 #include "buffer.cpp"
 #include "uniform.cpp"
+#include "texture.cpp"
+#include "framebuffer.cpp"

@@ -35,6 +35,9 @@ namespace sld {
     using gl_buffer           = gl_object;
     using gl_buffer_type      = gl_type;
     using gl_buffer_useage    = gl_type;
+    using gl_texture          = gl_object;
+    using gl_framebuffer      = gl_object;
+    using gl_renderbuffer     = gl_object;
     using gl_platform_handle  = HGLRC;
 
     //--------------------------------------------------------------------
@@ -54,6 +57,7 @@ namespace sld {
         gl_vertex          vertex;
         gl_buffer          vertex_buffer;
         gl_buffer          element_buffer;
+        gl_framebuffer     framebuffer;
         gl_viewport        viewport;
         color_rgba_f32     clear_color;
     };
@@ -160,6 +164,29 @@ namespace sld {
     SLD_OPENGL_API bool      gl_buffer_set_element_data    (gl_context* ctx, const gl_buffer buffer, const byte* data_ptr, const u32 data_size);
     SLD_OPENGL_API bool      gl_buffer_update_vertex_data  (gl_context* ctx, const gl_buffer buffer, const byte* data_ptr, const u32 data_size);
     SLD_OPENGL_API bool      gl_buffer_update_element_data (gl_context* ctx, const gl_buffer buffer, const byte* data_ptr, const u32 data_size);
+
+    //--------------------------------------------------------------------
+    // TEXTURES
+    //--------------------------------------------------------------------
+
+    SLD_OPENGL_API gl_texture gl_texture_create            (gl_context* ctx);
+    SLD_OPENGL_API bool       gl_texture_destroy           (gl_context* ctx, const gl_texture texture);
+    SLD_OPENGL_API bool       gl_texture_set_storage_rgba8 (gl_context* ctx, const gl_texture texture, const u32 width, const u32 height);
+
+    //--------------------------------------------------------------------
+    // FRAMEBUFFERS
+    //--------------------------------------------------------------------
+
+    SLD_OPENGL_API gl_renderbuffer gl_renderbuffer_create                    (gl_context* ctx);
+    SLD_OPENGL_API bool            gl_renderbuffer_destroy                   (gl_context* ctx, const gl_renderbuffer renderbuffer);
+    SLD_OPENGL_API bool            gl_renderbuffer_set_storage_depth_stencil (gl_context* ctx, const gl_renderbuffer renderbuffer, const u32 width, const u32 height);
+    SLD_OPENGL_API gl_framebuffer  gl_framebuffer_create                     (gl_context* ctx);
+    SLD_OPENGL_API bool            gl_framebuffer_destroy                    (gl_context* ctx, const gl_framebuffer framebuffer);
+    SLD_OPENGL_API bool            gl_framebuffer_attach_color_texture       (gl_context* ctx, const gl_framebuffer framebuffer, const gl_texture      texture);
+    SLD_OPENGL_API bool            gl_framebuffer_attach_depth_stencil       (gl_context* ctx, const gl_framebuffer framebuffer, const gl_renderbuffer renderbuffer);
+    SLD_OPENGL_API bool            gl_framebuffer_is_complete                (gl_context* ctx, const gl_framebuffer framebuffer);
+    SLD_OPENGL_API bool            gl_context_set_framebuffer                (gl_context* ctx, const gl_framebuffer framebuffer);
+    SLD_OPENGL_API bool            gl_context_set_framebuffer_default        (gl_context* ctx);
 
     //--------------------------------------------------------------------
     // UNIFORMS
