@@ -66,7 +66,55 @@ namespace sld {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
-        glBindTexture(GL_TEXTURE_2D, GL_ID_INVALID);
+        glBindTexture  (GL_TEXTURE_2D, GL_ID_INVALID);
+
+        ctx->error = glGetError();
+        return(ctx->error == GL_ERROR_SUCCESS);
+    }
+    
+    SLD_OPENGL_API bool
+    gl_texture_set_data_rgba8(
+        gl_context*      ctx,
+        const gl_texture texture,
+        const u32        width,
+        const u32        height,
+        const byte*      pixels_rgba) {
+
+        assert(ctx         != NULL);
+        assert(texture     != GL_ID_INVALID);
+        assert(width       != 0);
+        assert(height      != 0);
+        assert(pixels_rgba != NULL);
+
+        gl_context_clear_errors(ctx);
+
+        // bind the texture
+        glBindTexture(GL_TEXTURE_2D, texture);
+
+        // allocate the pixels, and set the data 
+        glTexImage2D(
+            GL_TEXTURE_2D,
+            0,
+            GL_RGBA8,
+            width,
+            height,
+            0,
+            GL_RGBA,
+            GL_UNSIGNED_BYTE,
+            (void*)pixels_rgba 
+        );
+       
+        // generate mipmap
+        glGenerateMipmap(GL_TEXTURE_2D);
+
+        // set parameters
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
+       
+        // unbind the texture
+        glBindTexture  (GL_TEXTURE_2D, GL_ID_INVALID);
 
         ctx->error = glGetError();
         return(ctx->error == GL_ERROR_SUCCESS);
