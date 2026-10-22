@@ -58,6 +58,8 @@ namespace sld {
         gl_buffer          vertex_buffer;
         gl_buffer          element_buffer;
         gl_framebuffer     framebuffer;
+        gl_texture         texture;
+        u32                texture_slot;
         gl_viewport        viewport;
         color_rgba_f32     clear_color;
     };
@@ -94,6 +96,8 @@ namespace sld {
     SLD_OPENGL_API bool gl_context_set_vertex_object       (gl_context* ctx, const gl_vertex  vertex);
     SLD_OPENGL_API bool gl_context_set_buffer_vertex       (gl_context* ctx, const gl_buffer  buffer);
     SLD_OPENGL_API bool gl_context_set_buffer_element      (gl_context* ctx, const gl_buffer  buffer);
+    SLD_OPENGL_API bool gl_context_set_texture_active      (gl_context* ctx, const gl_texture texture, const u32 slot);
+    SLD_OPENGL_API u32  gl_context_get_texture_slot_count  (gl_context* ctx);
 
     //--------------------------------------------------------------------
     // SHADERS
