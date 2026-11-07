@@ -173,10 +173,12 @@ namespace sld {
     // TEXTURES
     //--------------------------------------------------------------------
 
-    SLD_OPENGL_API gl_texture gl_texture_create            (gl_context* ctx);
-    SLD_OPENGL_API bool       gl_texture_destroy           (gl_context* ctx, const gl_texture texture);
-    SLD_OPENGL_API bool       gl_texture_set_storage_rgba8 (gl_context* ctx, const gl_texture texture, const u32 width, const u32 height);
-    SLD_OPENGL_API bool       gl_texture_set_data_rgba8    (gl_context* ctx, const gl_texture texture, const u32 width, const u32 height, const byte* pixels_rgba);
+    SLD_OPENGL_API gl_texture gl_texture_create                    (gl_context* ctx);
+    SLD_OPENGL_API bool       gl_texture_destroy                   (gl_context* ctx, const gl_texture texture);
+    SLD_OPENGL_API bool       gl_texture_set_storage_rgba8         (gl_context* ctx, const gl_texture texture, const u32 width, const u32 height);
+    SLD_OPENGL_API bool       gl_texture_set_data_rgba8            (gl_context* ctx, const gl_texture texture, const u32 width, const u32 height, const byte* pixels_rgba);
+    SLD_OPENGL_API bool       gl_texture_set_storage_rgba8_layered (gl_context* ctx, const gl_texture texture, const u32 width, const u32 height, const u32 layer_count);
+    SLD_OPENGL_API bool       gl_texture_set_data_rgba8_layered    (gl_context* ctx, const gl_texture texture, const u32 width, const u32 height, const byte* pixels_rgba, const u32 layer_count);
 
     //--------------------------------------------------------------------
     // FRAMEBUFFERS
