@@ -466,6 +466,7 @@ namespace sld {
         return(did_set);   
     }
     
+
     SLD_OPENGL_API bool
     gl_context_set_texture_active(
         gl_context*      ctx,
@@ -485,6 +486,35 @@ namespace sld {
         }
 
         glBindTexture(GL_TEXTURE_2D, texture);
+        ctx->error = glGetError();
+
+        const bool did_set = (ctx->error == GL_ERROR_SUCCESS); 
+        ctx->texture       = did_set ? texture : GL_ID_INVALID;
+        ctx->texture_slot  = slot;
+
+        return(did_set);
+    }
+
+    // for textures made with the rgba8_layered functions
+    SLD_OPENGL_API bool
+    gl_context_set_layered_texture_active(
+        gl_context*      ctx,
+        const gl_texture texture,
+        const u32        slot) {
+
+        gl_context_clear_errors(ctx);
+
+        assert(ctx && texture != GL_ID_INVALID);
+        assert(slot < gl_context_get_texture_slot_count(ctx));
+
+        glActiveTexture(GL_TEXTURE0 + slot);
+        ctx->error = glGetError(); 
+
+        if (ctx->error != GL_ERROR_SUCCESS) {
+            return(false);
+        }
+
+        glBindTexture(GL_TEXTURE_2D_ARRAY, texture);
         ctx->error = glGetError();
 
         const bool did_set = (ctx->error == GL_ERROR_SUCCESS); 
