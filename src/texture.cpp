@@ -234,4 +234,18 @@ namespace sld {
         ctx->error = glGetError();
         return(ctx->error == GL_ERROR_SUCCESS);
     }
+    
+    SLD_OPENGL_API bool
+    gl_texture_set_repeat_horizontally(
+        gl_context*      ctx,
+        const gl_texture texture) {
+
+        glBindTexture   (GL_TEXTURE_2D_ARRAY, texture);
+        glTexParameteri (GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, GL_REPEAT);
+
+        glBindTexture   (GL_TEXTURE_2D_ARRAY, GL_ID_INVALID);
+    
+        ctx->error = glGetError();
+        return(ctx->error == GL_ERROR_SUCCESS);
+    }
 };
